@@ -30,6 +30,7 @@ document.querySelectorAll('[data-benefits-carousel]').forEach((carousel) => {
     const track = carousel.querySelector('[data-carousel-track]');
     const dots = [...carousel.querySelectorAll('[data-carousel-dot]')];
     let currentSlide = 0;
+    let autoScroll;
 
     const showSlide = (index) => {
         currentSlide = (index + dots.length) % dots.length;
@@ -40,4 +41,18 @@ document.querySelectorAll('[data-benefits-carousel]').forEach((carousel) => {
     carousel.querySelector('[data-carousel-previous]').addEventListener('click', () => showSlide(currentSlide - 1));
     carousel.querySelector('[data-carousel-next]').addEventListener('click', () => showSlide(currentSlide + 1));
     dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
+
+    const stopAutoScroll = () => clearInterval(autoScroll);
+    const startAutoScroll = () => {
+        stopAutoScroll();
+        autoScroll = setInterval(() => showSlide(currentSlide + 1), 7000);
+    };
+
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+    carousel.addEventListener('focusin', stopAutoScroll);
+    carousel.addEventListener('focusout', (event) => {
+        if (!carousel.contains(event.relatedTarget)) startAutoScroll();
+    });
+    startAutoScroll();
 });
