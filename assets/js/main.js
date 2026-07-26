@@ -25,3 +25,19 @@ document.addEventListener('click', (event) => {
         });
     }
 });
+
+document.querySelectorAll('[data-benefits-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('[data-carousel-track]');
+    const dots = [...carousel.querySelectorAll('[data-carousel-dot]')];
+    let currentSlide = 0;
+
+    const showSlide = (index) => {
+        currentSlide = (index + dots.length) % dots.length;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, dotIndex) => dot.setAttribute('aria-selected', String(dotIndex === currentSlide)));
+    };
+
+    carousel.querySelector('[data-carousel-previous]').addEventListener('click', () => showSlide(currentSlide - 1));
+    carousel.querySelector('[data-carousel-next]').addEventListener('click', () => showSlide(currentSlide + 1));
+    dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
+});

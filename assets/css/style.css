@@ -238,6 +238,33 @@ body { margin: 0; }
     .primary-nav { gap: 1.2rem; }
 }
 
+.benefits { padding: clamp(4.5rem, 8vw, 7.5rem) max(1.5rem, calc((100% - 1440px) / 2)); background: #fff; }
+.benefits-shell > .eyebrow { text-align: center; }
+.benefits h2 { margin: .35rem 0 clamp(2.75rem, 5vw, 4.5rem); color: #1c315f; font-size: clamp(2rem, 3.2vw, 3.35rem); font-weight: 800; letter-spacing: -.035em; line-height: 1; text-align: center; text-transform: uppercase; }
+.benefits-carousel { position: relative; }
+.benefits-viewport { overflow: hidden; }
+.benefits-track { display: flex; transition: transform .55s cubic-bezier(.22, 1, .36, 1); }
+.benefits-slide { display: grid; flex: 0 0 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 5rem); }
+.benefit-card { padding: 1.2rem; border: 1px solid transparent; border-radius: 1.35rem; text-align: center; transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+.benefit-card:hover { border-color: rgba(101, 23, 98, .16); background: linear-gradient(145deg, #fff, #faf8fc); box-shadow: 0 16px 34px rgba(33, 44, 78, .09); transform: translateY(-6px); }
+.benefit-icon { display: grid; width: 3.8rem; height: 3.8rem; margin: 0 auto 1.55rem; place-items: center; border-radius: 50%; background: #1c315f; box-shadow: 0 8px 15px rgba(28, 49, 95, .15); color: #fff; font-size: 1.8rem; font-weight: 700; line-height: 1; transition: background-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+.benefit-card:hover .benefit-icon { background: #651762; box-shadow: 0 0 0 7px rgba(101, 23, 98, .1), 0 10px 22px rgba(101, 23, 98, .3); transform: scale(1.1) rotate(-5deg); }
+.benefit-card h3 { margin: 0 0 .65rem; color: #1c315f; font-size: clamp(1.15rem, 1.55vw, 1.55rem); font-weight: 700; }
+.benefit-card p { max-width: 31rem; margin: 0 auto 1rem; color: #3d4659; font-size: clamp(.9rem, 1.1vw, 1.05rem); font-weight: 400; line-height: 1.55; }
+.carousel-arrow { position: absolute; top: 43%; z-index: 2; display: grid; width: 3rem; height: 3rem; place-items: center; border: 0; border-radius: 50%; background: #fff; box-shadow: 0 8px 20px rgba(28, 49, 95, .12); color: #1c315f; cursor: pointer; font-size: 2.5rem; line-height: 1; transition: background-color .2s ease, color .2s ease, transform .2s ease; }
+.carousel-arrow:hover, .carousel-arrow:focus-visible { background: #651762; color: #fff; outline: none; transform: scale(1.08); }
+.carousel-arrow--previous { left: -1.5rem; }.carousel-arrow--next { right: -1.5rem; }
+.carousel-dots { display: flex; justify-content: center; gap: .65rem; margin-top: 2rem; }
+.carousel-dots button { width: .55rem; height: .55rem; padding: 0; border: 0; border-radius: 50%; background: #d1d6e1; cursor: pointer; transition: background-color .2s ease, transform .2s ease; }
+.carousel-dots button[aria-selected="true"] { background: #651762; transform: scale(1.35); }
+
+@media (max-width: 760px) {
+    .benefits-slide { grid-template-columns: 1fr; gap: 1rem; }
+    .benefits-slide:not(:first-child) { min-height: 0; }
+    .carousel-arrow { top: 42%; width: 2.5rem; height: 2.5rem; }
+    .carousel-arrow--previous { left: -.8rem; }.carousel-arrow--next { right: -.8rem; }
+}
+
 .hero {
     position: relative;
     overflow: hidden;
