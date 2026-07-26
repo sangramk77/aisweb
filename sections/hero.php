@@ -16,4 +16,10 @@
             <img src="assets/whybg/whybg.jpg" alt="Professional mediators in a discussion">
         </div>
     </div>
+    <form class="hero-consult" aria-label="Free consultation form">
+        <label><span class="sr-only">Name</span><input type="text" name="name" placeholder="Name"></label>
+        <label><span class="sr-only">Email</span><input type="text" name="email" placeholder="Email"></label>
+        <label><span class="sr-only">Phone</span><input type="text" name="phone" placeholder="Phone"></label>
+        <button type="button">Free consult 100% confidential</button>
+    </form>
 </section>
