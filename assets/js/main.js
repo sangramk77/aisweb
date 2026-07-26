@@ -94,3 +94,27 @@ document.querySelectorAll('[data-typing-text]').forEach((element) => {
 
     type();
 });
+
+const videoModal = document.querySelector('[data-video-modal]');
+const videoModalFrame = document.querySelector('[data-video-modal-frame]');
+const closeVideoModal = () => {
+    if (!videoModal || !videoModalFrame) return;
+    videoModal.hidden = true;
+    videoModalFrame.innerHTML = '';
+    document.body.classList.remove('video-modal-open');
+};
+
+document.querySelectorAll('[data-accreditation-video]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+        if (!videoModal || !videoModalFrame) return;
+        videoModalFrame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/NRxW9BQtZR0?autoplay=1&start=25&rel=0" title="Mediation Company video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+        videoModal.hidden = false;
+        document.body.classList.add('video-modal-open');
+        videoModal.querySelector('.video-modal-close').focus();
+    });
+});
+
+document.querySelectorAll('[data-video-modal-close]').forEach((control) => control.addEventListener('click', closeVideoModal));
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && videoModal && !videoModal.hidden) closeVideoModal();
+});
