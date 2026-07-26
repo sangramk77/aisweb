@@ -274,6 +274,39 @@ body { margin: 0; }
     .carousel-arrow--previous { left: -.8rem; }.carousel-arrow--next { right: -.8rem; }
 }
 
+.video-consultation { padding: clamp(4.5rem, 8vw, 7.5rem) max(1.5rem, calc((100% - 1440px) / 2)); background: linear-gradient(135deg, #fbfbfe, #f2f5fd); }
+.video-consultation-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .38fr); align-items: center; gap: clamp(1.5rem, 3vw, 3.5rem); max-width: 1440px; margin: 0 auto; }
+.video-column h2 { margin: .35rem 0 1.6rem; color: #1c315f; font-size: clamp(1.9rem, 3vw, 3rem); font-weight: 700; letter-spacing: -.035em; }
+.video-stage { position: relative; overflow: hidden; border: 1px solid rgba(28, 49, 95, .12); border-radius: 1.7rem; background: #071022; box-shadow: 0 22px 46px rgba(19, 34, 66, .2); aspect-ratio: 16 / 9; }
+.video-stage::after { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(5, 4, 41, .18), rgba(101, 23, 98, .18)); content: ""; pointer-events: none; }
+.video-stage img, .video-stage iframe { display: block; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.video-stage-play { position: absolute; top: 50%; left: 50%; z-index: 1; display: grid; width: 5.4rem; height: 5.4rem; place-items: center; padding-left: .28rem; border: 1px solid rgba(255, 255, 255, .45); border-radius: 50%; background: rgba(101, 23, 98, .92); box-shadow: 0 0 0 11px rgba(255, 255, 255, .13), 0 16px 28px rgba(5, 4, 41, .35); color: #fff; cursor: pointer; font-size: 2rem; transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease; transform: translate(-50%, -50%); }
+.video-stage-play:hover, .video-stage-play:focus-visible { background: #7c1b74; box-shadow: 0 0 0 16px rgba(255, 255, 255, .16), 0 20px 34px rgba(5, 4, 41, .4); outline: none; transform: translate(-50%, -50%) scale(1.08); }
+.video-thumbnails { display: flex; gap: .9rem; margin-top: 1rem; }
+.video-thumbnail { position: relative; display: grid; grid-template-columns: 92px 1fr; align-items: center; gap: .75rem; width: min(100%, 290px); padding: .42rem; overflow: hidden; border: 1px solid rgba(28, 49, 95, .13); border-radius: .9rem; background: rgba(255, 255, 255, .72); color: #1c315f; cursor: pointer; font: inherit; font-size: .77rem; font-weight: 700; text-align: left; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.video-thumbnail:hover, .video-thumbnail:focus-visible, .video-thumbnail.is-active { border-color: #651762; box-shadow: 0 9px 20px rgba(101, 23, 98, .14); outline: none; transform: translateY(-2px); }
+.video-thumbnail img { display: block; width: 92px; height: 54px; border-radius: .55rem; object-fit: cover; }
+.thumbnail-play { position: absolute; left: 33px; display: grid; width: 30px; height: 30px; place-items: center; padding-left: 2px; border-radius: 50%; background: #651762; color: #fff; font-size: .75rem; }
+.video-consult-form { display: grid; gap: .9rem; padding: clamp(1.25rem, 2.5vw, 2rem); border: 1px solid rgba(101, 23, 98, .3); border-radius: 1.5rem; background: linear-gradient(145deg, rgba(255, 255, 255, .88), rgba(250, 245, 250, .74)); box-shadow: 0 20px 42px rgba(41, 43, 73, .12), inset 0 1px 0 rgba(255, 255, 255, .7); -webkit-backdrop-filter: blur(18px) saturate(130%); backdrop-filter: blur(18px) saturate(130%); }
+.video-consult-form > p { margin: 0 0 .2rem; color: #651762; font-size: 1.1rem; font-weight: 700; }
+.video-consult-form input { width: 100%; height: 56px; padding: 0 1rem; border: 1px solid #c7cbd6; border-radius: .75rem; background: rgba(255, 255, 255, .78); color: #1c315f; font: inherit; font-size: 1rem; outline: none; transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease; }
+.video-consult-form input::placeholder { color: #777f92; }
+.video-consult-form input:focus { border-color: #651762; background: #fff; box-shadow: 0 0 0 4px rgba(101, 23, 98, .11); }
+.consult-message { display: flex; align-items: center; justify-content: center; gap: .55rem; min-height: 68px; padding: .7rem .9rem; border: 0; border-radius: .8rem; background: linear-gradient(135deg, #651762, #861d78); box-shadow: 0 12px 24px rgba(101, 23, 98, .2), inset 0 1px 0 rgba(255, 255, 255, .25); color: #fff; cursor: pointer; font: inherit; font-size: clamp(.82rem, 1.05vw, 1rem); font-weight: 700; line-height: 1.3; text-align: center; transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+.consult-message span { display: grid; flex: 0 0 1.65rem; width: 1.65rem; height: 1.65rem; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, .18); font-size: 1rem; font-weight: 400; transition: transform .2s ease, background-color .2s ease; }
+.consult-message:hover, .consult-message:focus-visible { box-shadow: 0 17px 30px rgba(101, 23, 98, .28), inset 0 1px 0 rgba(255, 255, 255, .32); filter: brightness(1.06); outline: none; transform: translateY(-3px); }
+.consult-message:hover span, .consult-message:focus-visible span { background: rgba(255, 255, 255, .28); transform: translateX(.2rem); }
+
+@media (max-width: 900px) {
+    .video-consultation-grid { grid-template-columns: 1fr; }
+    .video-consult-form { max-width: 620px; width: 100%; margin: 0 auto; }
+}
+
+@media (max-width: 520px) {
+    .video-stage-play { width: 4.3rem; height: 4.3rem; font-size: 1.5rem; }
+    .video-thumbnail { width: 100%; }
+}
+
 .hero {
     position: relative;
     overflow: hidden;

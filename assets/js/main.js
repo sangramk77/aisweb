@@ -56,3 +56,15 @@ document.querySelectorAll('[data-benefits-carousel]').forEach((carousel) => {
     });
     startAutoScroll();
 });
+
+document.querySelectorAll('[data-video-play]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+        const stage = document.querySelector('[data-video-stage]');
+        const videoId = trigger.dataset.videoId;
+        if (!stage || !videoId) return;
+
+        stage.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&start=25&rel=0" title="Mediation Benefits video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+        document.querySelectorAll('[data-video-play]').forEach((item) => item.classList.remove('is-active'));
+        trigger.classList.add('is-active');
+    });
+});
