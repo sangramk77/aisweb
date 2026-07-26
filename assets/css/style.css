@@ -238,9 +238,36 @@ body { margin: 0; }
     .primary-nav { gap: 1.2rem; }
 }
 
+.services { position: relative; isolation: isolate; overflow: hidden; padding: clamp(4.5rem, 8vw, 7.5rem) max(1.5rem, calc((100% - 1440px) / 2)); background: linear-gradient(135deg, #fff, #f7f9ff); }
+.services::before { position: absolute; z-index: -1; top: -55%; left: -18%; width: 70%; height: 135%; border-radius: 46% 54% 61% 39%; background: radial-gradient(ellipse at center, rgba(101, 23, 98, .11), rgba(101, 23, 98, 0) 68%); content: ""; filter: blur(8px); animation: services-tint-flow 13s ease-in-out infinite alternate; }
+.services::after { position: absolute; z-index: -1; right: -18%; bottom: -60%; width: 68%; height: 130%; border-radius: 57% 43% 38% 62%; background: radial-gradient(ellipse at center, rgba(28, 49, 95, .11), rgba(28, 49, 95, 0) 68%); content: ""; filter: blur(10px); animation: services-tint-flow 16s ease-in-out -5s infinite alternate-reverse; }
+.services-shell { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; }
+.services-shell > .eyebrow { text-align: center; }
+.services h2 { position: relative; width: fit-content; margin: .35rem auto clamp(2.6rem, 5vw, 4.75rem); padding-bottom: .75rem; color: #1c315f; font-size: clamp(2rem, 3.3vw, 3.4rem); font-weight: 700; letter-spacing: -.04em; line-height: 1.08; text-align: center; }
+.services h2::after { position: absolute; right: 0; bottom: 0; left: 0; height: 3px; border-radius: 999px; background: linear-gradient(90deg, #651762, #a0328d); content: ""; transform-origin: center; animation: heading-underline-grow 2.5s cubic-bezier(.45, 0, .55, 1) infinite; }
+@keyframes services-tint-flow { from { transform: translate3d(-5%, -3%, 0) rotate(-8deg) scale(.95); } to { transform: translate3d(14%, 8%, 0) rotate(10deg) scale(1.15); } }
+.services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.15rem; }
+.service-card { --service-color: #1d2175; position: relative; min-height: 295px; padding: 1.45rem; overflow: hidden; border: 1px solid rgba(92, 105, 136, .18); border-radius: 1.4rem; background: linear-gradient(145deg, rgba(255, 255, 255, .75), rgba(239, 244, 255, .56)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72), 0 9px 24px rgba(30, 45, 80, .045); -webkit-backdrop-filter: blur(14px) saturate(125%); backdrop-filter: blur(14px) saturate(125%); transition: border-color .35s ease, box-shadow .35s ease, transform .35s ease; }
+.service-card::before { position: absolute; z-index: 0; top: -80%; right: -45%; width: 150%; height: 180%; border-radius: 42% 58% 55% 45%; background: radial-gradient(circle at 32% 34%, color-mix(in srgb, var(--service-color) 34%, transparent) 0 12%, color-mix(in srgb, var(--service-color) 14%, transparent) 34%, transparent 68%); content: ""; opacity: 0; transform: translate(-22%, 34%) rotate(-14deg) scale(.7); transition: opacity .4s ease, transform .7s cubic-bezier(.22, 1, .36, 1); }
+.service-card::after { position: absolute; z-index: 0; right: -25%; bottom: -70%; width: 105%; height: 105%; border-radius: 50%; background: color-mix(in srgb, var(--service-color) 10%, transparent); content: ""; opacity: 0; transform: scale(.5); transition: opacity .35s ease, transform .65s cubic-bezier(.22, 1, .36, 1); }
+.service-card > * { position: relative; z-index: 1; }
+.service-card:hover { border-color: color-mix(in srgb, var(--service-color) 38%, white); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .82), 0 18px 32px color-mix(in srgb, var(--service-color) 16%, transparent); transform: translateY(-7px); }
+.service-card:hover::before { opacity: 1; transform: translate(2%, -4%) rotate(7deg) scale(1.1); }
+.service-card:hover::after { opacity: 1; transform: scale(1.15); }
+.service-icon { display: grid; width: 2.85rem; height: 2.85rem; margin-bottom: 1.35rem; place-items: center; border-radius: 50%; background: var(--service-color); box-shadow: 0 7px 14px color-mix(in srgb, var(--service-color) 22%, transparent); color: #fff; font-size: 1.25rem; font-weight: 700; line-height: 1; transition: transform .35s ease, box-shadow .35s ease, filter .35s ease; }
+.service-card:hover .service-icon { box-shadow: 0 0 0 7px color-mix(in srgb, var(--service-color) 13%, transparent), 0 10px 21px color-mix(in srgb, var(--service-color) 42%, transparent); filter: brightness(1.12); transform: scale(1.1) rotate(-6deg); }
+.service-card h3 { margin: 0 0 1.15rem; color: var(--service-color); font-size: clamp(1.1rem, 1.35vw, 1.4rem); font-weight: 700; line-height: 1.25; }
+.service-card p { margin: 0; color: #3f485d; font-size: clamp(.88rem, 1vw, 1rem); font-weight: 500; line-height: 1.58; }
+.service-card--civil { --service-color: #0b146b; }.service-card--workplace { --service-color: #eb7a00; }.service-card--family { --service-color: #dc0aca; }.service-card--online { --service-color: #0898df; }.service-card--observations { --service-color: #25ce48; }.service-card--telephone { --service-color: #94a9c9; }.service-card--commercial-training { --service-color: #7410d7; }.service-card--workplace-training { --service-color: #13d8b5; }
+
+@media (max-width: 1080px) { .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.service-card { min-height: 250px; } }
+@media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; }.service-card { min-height: 0; }.services h2 { font-size: 2rem; } }
+
 .benefits { padding: clamp(2.25rem, 4vw, 3.75rem) max(1.5rem, calc((100% - 1440px) / 2)) clamp(4.5rem, 8vw, 7.5rem); background: #fff; }
 .benefits-shell > .eyebrow { text-align: center; }
-.benefits h2 { margin: .35rem 0 clamp(2.75rem, 5vw, 4.5rem); color: #1c315f; font-size: clamp(2rem, 3.2vw, 3.35rem); font-weight: 800; letter-spacing: -.035em; line-height: 1; text-align: center; text-transform: uppercase; }
+.benefits h2 { position: relative; width: fit-content; margin: .35rem auto clamp(2.75rem, 5vw, 4.5rem); padding-bottom: .75rem; color: #1c315f; font-size: clamp(2rem, 3.2vw, 3.35rem); font-weight: 800; letter-spacing: -.035em; line-height: 1; text-align: center; }
+.benefits h2::after { position: absolute; right: 0; bottom: 0; left: 0; height: 3px; border-radius: 999px; background: linear-gradient(90deg, #651762, #a0328d); content: ""; transform-origin: center; animation: heading-underline-grow 2.5s cubic-bezier(.45, 0, .55, 1) infinite; }
+@keyframes heading-underline-grow { 0%, 100% { transform: scaleX(.32); opacity: .55; } 50% { transform: scaleX(1); opacity: 1; } }
 .benefits-carousel { position: relative; }
 .benefits-viewport { overflow: hidden; }
 .benefits-track { display: flex; transition: transform .55s cubic-bezier(.22, 1, .36, 1); }

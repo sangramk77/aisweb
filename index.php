@@ -18,6 +18,7 @@ $pageTitle = 'AIS Web';
         <?php require __DIR__ . '/sections/hero.php'; ?>
         <?php require __DIR__ . '/sections/benefits.php'; ?>
         <?php require __DIR__ . '/sections/video-consultation.php'; ?>
+        <?php require __DIR__ . '/sections/services.php'; ?>
         <?php require __DIR__ . '/sections/about.php'; ?>
     </main>
 

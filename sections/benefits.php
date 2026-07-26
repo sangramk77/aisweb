@@ -1,7 +1,7 @@
 <section class="benefits" aria-labelledby="benefits-title">
     <div class="benefits-shell">
         <p class="eyebrow">Why choose mediation</p>
-        <h2 id="benefits-title">Benefits of Mediation</h2>
+        <h2 id="benefits-title">Benefits Of Mediation</h2>
 
         <div class="benefits-carousel" data-benefits-carousel>
             <button class="carousel-arrow carousel-arrow--previous" type="button" aria-label="Previous benefits" data-carousel-previous>‹</button>
