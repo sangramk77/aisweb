@@ -20,6 +20,7 @@ $pageTitle = 'AIS Web';
         <?php require __DIR__ . '/sections/video-consultation.php'; ?>
         <?php require __DIR__ . '/sections/services.php'; ?>
         <?php require __DIR__ . '/sections/closure-form.php'; ?>
+        <?php require __DIR__ . '/sections/company.php'; ?>
         <?php require __DIR__ . '/sections/about.php'; ?>
     </main>
 

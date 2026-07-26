@@ -263,7 +263,7 @@ body { margin: 0; }
 @media (max-width: 1080px) { .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.service-card { min-height: 250px; } }
 @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; }.service-card { min-height: 0; }.services h2 { font-size: 2rem; } }
 
-.closure-form-section { padding: 0 max(1.5rem, calc((100% - 1440px) / 2)) clamp(4.5rem, 7vw, 6.5rem); background: linear-gradient(135deg, #fff, #f7f9ff); }
+.closure-form-section { padding: 0 max(1.5rem, calc((100% - 1440px) / 2)) clamp(1.5rem, 3vw, 2.75rem); background: linear-gradient(135deg, #fff, #f7f9ff); }
 .closure-form { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(250px, 1.05fr); gap: .75rem; max-width: 1440px; margin: 0 auto; padding: .7rem; border: 1px solid rgba(101, 23, 98, .16); border-radius: 1.2rem; background: rgba(255, 255, 255, .62); box-shadow: 0 16px 36px rgba(24, 36, 69, .08), inset 0 1px 0 rgba(255, 255, 255, .72); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
 .closure-form input { width: 100%; height: 54px; padding: 0 .9rem; border: 2px solid #651762; border-radius: .65rem; background: rgba(255, 255, 255, .84); color: #1c315f; font: inherit; font-size: .92rem; font-weight: 500; outline: none; transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease; }
 .closure-form input::placeholder { color: #9b71a0; }
@@ -275,6 +275,34 @@ body { margin: 0; }
 
 @media (max-width: 900px) { .closure-form { grid-template-columns: 1fr 1fr; }.closure-form button { grid-column: 1 / -1; } }
 @media (max-width: 560px) { .closure-form { grid-template-columns: 1fr; padding: .75rem; }.closure-form button { grid-column: auto; } }
+
+.company { padding: clamp(2.5rem, 4vw, 4rem) max(1.5rem, calc((100% - 1440px) / 2)) clamp(4.5rem, 8vw, 7.5rem); background: linear-gradient(145deg, #fff 0%, #f5f7fd 100%); }
+.company-shell { max-width: 1440px; margin: 0 auto; }
+.company-shell > .eyebrow { text-align: center; }
+.company h2 { position: relative; width: fit-content; margin: .35rem auto clamp(2.75rem, 5vw, 4.5rem); padding-bottom: .75rem; color: #1c315f; font-size: clamp(2rem, 3.3vw, 3.4rem); font-weight: 700; letter-spacing: -.04em; line-height: 1.08; text-align: center; text-transform: uppercase; }
+.company h2::after { position: absolute; right: 0; bottom: 0; left: 0; height: 3px; border-radius: 999px; background: linear-gradient(90deg, #651762, #a0328d); content: ""; transform-origin: center; animation: heading-underline-grow 2.5s cubic-bezier(.45, 0, .55, 1) infinite; }
+.company-grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(340px, .98fr); align-items: center; gap: clamp(2.5rem, 6vw, 8rem); }
+.company-copy { max-width: 700px; }
+.company-label { margin: 0 0 1rem; color: #651762; font-size: .82rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.company-copy h3 { margin: 0 0 1rem; color: #1c315f; font-size: clamp(2.2rem, 4vw, 4.2rem); font-weight: 700; letter-spacing: -.055em; line-height: 1; }
+.company-credentials { margin: 0 0 1.45rem; color: #050429; font-size: clamp(.95rem, 1.3vw, 1.2rem); font-weight: 700; }
+.company-role { min-height: 3.3em; margin: 0 0 1.6rem; color: #536078; font-size: clamp(1rem, 1.45vw, 1.25rem); font-weight: 600; line-height: 1.5; }
+.company-role span { background: linear-gradient(90deg, #1c315f 0%, #53769b 52%, #651762 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.company-role span::after { display: inline-block; width: 2px; height: 1.15em; margin-left: .12rem; background: #651762; content: ""; vertical-align: -.14em; animation: typing-caret .75s step-end infinite; }
+.company-copy > p:not(.company-label):not(.company-credentials):not(.company-role) { margin: 0 0 1.25rem; color: #4d586e; font-size: clamp(1rem, 1.3vw, 1.16rem); font-weight: 500; line-height: 1.62; }
+.company-cta { display: inline-flex; align-items: center; gap: .65rem; margin-top: .65rem; padding: .85rem 1.2rem; border-radius: .85rem; background: linear-gradient(135deg, #5f0554, #791467); box-shadow: 0 12px 22px rgba(95, 5, 84, .18); color: #fff; font-size: .95rem; font-weight: 700; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+.company-cta span { display: grid; width: 1.55rem; height: 1.55rem; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, .18); font-size: 1.05rem; font-weight: 400; transition: transform .2s ease; }
+.company-cta:hover, .company-cta:focus-visible { box-shadow: 0 16px 28px rgba(95, 5, 84, .28); filter: brightness(1.06); outline: none; transform: translateY(-3px); }
+.company-cta:hover span, .company-cta:focus-visible span { transform: translateX(.18rem); }
+.company-photo { position: relative; isolation: isolate; max-width: 670px; margin-left: auto; }
+.company-photo::before { position: absolute; z-index: -1; top: 1.2rem; right: -1.4rem; bottom: -1.3rem; left: 1.5rem; border-radius: 2.2rem; background: linear-gradient(145deg, #651762, #1c315f); content: ""; transform: rotate(2.5deg); }
+.company-photo::after { position: absolute; z-index: -2; top: 2.1rem; right: -2.1rem; bottom: -2.1rem; left: 2.2rem; border: 1px solid rgba(101, 23, 98, .14); border-radius: 2.2rem; background: #dce6fa; content: ""; }
+.company-photo img { display: block; width: 100%; min-height: 480px; border: 1px solid rgba(255, 255, 255, .72); border-radius: 1.8rem; box-shadow: 0 24px 50px rgba(20, 34, 68, .2); object-fit: cover; transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease; }
+.company-photo:hover img { border-color: rgba(163, 95, 158, .78); box-shadow: 0 0 0 3px rgba(101, 23, 98, .12), 0 0 24px rgba(101, 23, 98, .28), 0 26px 52px rgba(20, 34, 68, .22); transform: translateY(-3px); }
+@keyframes typing-caret { 50% { opacity: 0; } }
+
+@media (max-width: 900px) { .company-grid { grid-template-columns: 1fr; }.company-copy { max-width: none; }.company-photo { max-width: 650px; margin: 1rem auto 0; } }
+@media (max-width: 520px) { .company-copy h3 { font-size: 2.3rem; }.company-photo img { min-height: 320px; }.company-cta { width: 100%; justify-content: center; } }
 
 .benefits { padding: clamp(2.25rem, 4vw, 3.75rem) max(1.5rem, calc((100% - 1440px) / 2)) clamp(4.5rem, 8vw, 7.5rem); background: #fff; }
 .benefits-shell > .eyebrow { text-align: center; }

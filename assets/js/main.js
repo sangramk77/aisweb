@@ -68,3 +68,29 @@ document.querySelectorAll('[data-video-play]').forEach((trigger) => {
         trigger.classList.add('is-active');
     });
 });
+
+document.querySelectorAll('[data-typing-text]').forEach((element) => {
+    const text = element.dataset.typingText;
+    const output = element.querySelector('span');
+    let index = 0;
+    let deleting = false;
+
+    const type = () => {
+        output.textContent = text.slice(0, index);
+        if (!deleting && index < text.length) {
+            index += 1;
+            setTimeout(type, 26);
+        } else if (!deleting) {
+            deleting = true;
+            setTimeout(type, 1800);
+        } else if (index > 0) {
+            index -= 1;
+            setTimeout(type, 12);
+        } else {
+            deleting = false;
+            setTimeout(type, 500);
+        }
+    };
+
+    type();
+});
