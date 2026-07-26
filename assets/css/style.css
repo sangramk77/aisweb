@@ -263,6 +263,19 @@ body { margin: 0; }
 @media (max-width: 1080px) { .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.service-card { min-height: 250px; } }
 @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; }.service-card { min-height: 0; }.services h2 { font-size: 2rem; } }
 
+.closure-form-section { padding: 0 max(1.5rem, calc((100% - 1440px) / 2)) clamp(4.5rem, 7vw, 6.5rem); background: linear-gradient(135deg, #fff, #f7f9ff); }
+.closure-form { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(250px, 1.05fr); gap: .75rem; max-width: 1440px; margin: 0 auto; padding: .7rem; border: 1px solid rgba(101, 23, 98, .16); border-radius: 1.2rem; background: rgba(255, 255, 255, .62); box-shadow: 0 16px 36px rgba(24, 36, 69, .08), inset 0 1px 0 rgba(255, 255, 255, .72); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.closure-form input { width: 100%; height: 54px; padding: 0 .9rem; border: 2px solid #651762; border-radius: .65rem; background: rgba(255, 255, 255, .84); color: #1c315f; font: inherit; font-size: .92rem; font-weight: 500; outline: none; transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease; }
+.closure-form input::placeholder { color: #9b71a0; }
+.closure-form input:focus { border-color: #8e247e; background: #fff; box-shadow: 0 0 0 4px rgba(101, 23, 98, .11); }
+.closure-form button { position: relative; min-height: 54px; padding: .55rem 2.9rem .55rem .8rem; overflow: hidden; border: 0; border-radius: .7rem; background: linear-gradient(135deg, #5f0554, #791467); box-shadow: 0 10px 20px rgba(95, 5, 84, .2), inset 0 1px 0 rgba(255, 255, 255, .24); color: #fff; cursor: pointer; font: inherit; font-size: clamp(.64rem, .8vw, .78rem); font-weight: 700; letter-spacing: .02em; line-height: 1.18; text-align: center; text-transform: uppercase; transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+.closure-form button span { position: absolute; top: 50%; right: .65rem; display: grid; width: 1.6rem; height: 1.6rem; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, .17); font-size: 1rem; font-weight: 400; transform: translateY(-50%); transition: transform .2s ease, background-color .2s ease; }
+.closure-form button:hover, .closure-form button:focus-visible { box-shadow: 0 17px 30px rgba(95, 5, 84, .3), inset 0 1px 0 rgba(255, 255, 255, .3); filter: brightness(1.06); outline: none; transform: translateY(-3px); }
+.closure-form button:hover span, .closure-form button:focus-visible span { background: rgba(255, 255, 255, .28); transform: translate(.18rem, -50%); }
+
+@media (max-width: 900px) { .closure-form { grid-template-columns: 1fr 1fr; }.closure-form button { grid-column: 1 / -1; } }
+@media (max-width: 560px) { .closure-form { grid-template-columns: 1fr; padding: .75rem; }.closure-form button { grid-column: auto; } }
+
 .benefits { padding: clamp(2.25rem, 4vw, 3.75rem) max(1.5rem, calc((100% - 1440px) / 2)) clamp(4.5rem, 8vw, 7.5rem); background: #fff; }
 .benefits-shell > .eyebrow { text-align: center; }
 .benefits h2 { position: relative; width: fit-content; margin: .35rem auto clamp(2.75rem, 5vw, 4.5rem); padding-bottom: .75rem; color: #1c315f; font-size: clamp(2rem, 3.2vw, 3.35rem); font-weight: 800; letter-spacing: -.035em; line-height: 1; text-align: center; }
