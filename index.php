@@ -26,7 +26,7 @@ $pageTitle = 'AIS Web';
         <?php require __DIR__ . '/sections/process.php'; ?>
         <?php require __DIR__ . '/sections/why-us.php'; ?>
         <?php require __DIR__ . '/sections/faq.php'; ?>
-        <?php require __DIR__ . '/sections/about.php'; ?>
+        <?php require __DIR__ . '/sections/clients.php'; ?>
     </main>
 
     <?php require __DIR__ . '/sections/footer.php'; ?>
