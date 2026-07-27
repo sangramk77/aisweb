@@ -442,18 +442,18 @@ body { margin: 0; }
 @media (max-width: 900px) { .why-us-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .why-us { background-attachment: scroll; } .why-us-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; } }
 
-.benefits { padding: clamp(2.25rem, 4vw, 3.75rem) max(1.5rem, calc((100% - 1440px) / 2)) clamp(4.5rem, 8vw, 7.5rem); background: #fff; }
+.benefits { padding: clamp(2rem, 3.5vw, 3.5rem) max(1.5rem, calc((100% - 1440px) / 2)) clamp(1.5rem, 3vw, 2.5rem); background: #fff; }
 .benefits-shell > .eyebrow { text-align: center; }
-.benefits h2 { position: relative; width: fit-content; margin: .35rem auto clamp(2.75rem, 5vw, 4.5rem); padding-bottom: .75rem; color: #1c315f; font-size: clamp(2rem, 3.2vw, 3.35rem); font-weight: 800; letter-spacing: -.035em; line-height: 1; text-align: center; }
+.benefits h2 { position: relative; width: fit-content; margin: .35rem auto clamp(2rem, 4vw, 3rem); padding-bottom: .75rem; color: #1c315f; font-size: clamp(2rem, 3.2vw, 3.35rem); font-weight: 800; letter-spacing: -.035em; line-height: 1; text-align: center; }
 .benefits h2::after { position: absolute; right: 0; bottom: 0; left: 0; height: 3px; border-radius: 999px; background: linear-gradient(90deg, #651762, #a0328d); content: ""; transform-origin: center; animation: heading-underline-grow 2.5s cubic-bezier(.45, 0, .55, 1) infinite; }
 @keyframes heading-underline-grow { 0%, 100% { transform: scaleX(.32); opacity: .55; } 50% { transform: scaleX(1); opacity: 1; } }
 .benefits-carousel { position: relative; }
 .benefits-viewport { overflow: hidden; }
 .benefits-track { display: flex; transition: transform .55s cubic-bezier(.22, 1, .36, 1); }
-.benefits-slide { display: grid; flex: 0 0 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 5rem); }
-.benefit-card { --benefit-color: #651762; padding: 1.2rem; border: 1px solid transparent; border-radius: 1.35rem; text-align: center; transition: background-color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
-.benefit-card:hover { border-color: color-mix(in srgb, var(--benefit-color) 34%, white); background: linear-gradient(145deg, rgba(255, 255, 255, .72), color-mix(in srgb, var(--benefit-color) 14%, white)); box-shadow: 0 18px 36px color-mix(in srgb, var(--benefit-color) 18%, transparent), inset 0 1px 0 rgba(255, 255, 255, .75); transform: translateY(-6px); -webkit-backdrop-filter: blur(16px) saturate(135%); backdrop-filter: blur(16px) saturate(135%); }
-.benefit-icon { display: grid; width: 3.8rem; height: 3.8rem; margin: 0 auto 1.55rem; place-items: center; border-radius: 50%; background: #1c315f; box-shadow: 0 8px 15px rgba(28, 49, 95, .15); color: #fff; font-size: 1.8rem; font-weight: 700; line-height: 1; transition: background-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+.benefits-slide { display: grid; flex: 0 0 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.benefit-card { --benefit-color: #651762; height: fit-content; padding: 1.4rem 1.2rem; border: 1px solid rgba(28, 49, 95, .08); border-radius: 1.35rem; background: rgba(255, 255, 255, .75); box-shadow: 0 4px 16px rgba(28, 49, 95, .03); text-align: center; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); transition: background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+.benefit-card:hover { border-color: color-mix(in srgb, var(--benefit-color) 34%, white); background: linear-gradient(145deg, rgba(255, 255, 255, .95), color-mix(in srgb, var(--benefit-color) 14%, white)); box-shadow: 0 18px 36px color-mix(in srgb, var(--benefit-color) 18%, transparent), inset 0 1px 0 rgba(255, 255, 255, .9); transform: translateY(-6px); -webkit-backdrop-filter: blur(16px) saturate(135%); backdrop-filter: blur(16px) saturate(135%); }
+.benefit-icon { display: grid; width: 3.8rem; height: 3.8rem; margin: 0 auto 1.35rem; place-items: center; border-radius: 50%; background: #1c315f; box-shadow: 0 8px 15px rgba(28, 49, 95, .15); color: #fff; font-size: 1.8rem; font-weight: 700; line-height: 1; transition: background-color .25s ease, box-shadow .25s ease, transform .25s ease; }
 .benefit-card:hover .benefit-icon { background: var(--benefit-color); box-shadow: 0 0 0 7px color-mix(in srgb, var(--benefit-color) 14%, transparent), 0 10px 22px color-mix(in srgb, var(--benefit-color) 40%, transparent); transform: scale(1.1) rotate(-5deg); }
 .benefits-slide:nth-child(1) .benefit-card:nth-child(1) { --benefit-color: #651762; }
 .benefits-slide:nth-child(1) .benefit-card:nth-child(2) { --benefit-color: #287f9f; }
@@ -466,10 +466,11 @@ body { margin: 0; }
 .benefits-slide:nth-child(3) .benefit-card:nth-child(3) { --benefit-color: #416fbe; }
 .benefit-card h3 { margin: 0 0 .65rem; color: #1c315f; font-size: clamp(1.15rem, 1.55vw, 1.55rem); font-weight: 700; }
 .benefit-card p { max-width: 31rem; margin: 0 auto 1rem; color: #3d4659; font-size: clamp(.9rem, 1.1vw, 1.05rem); font-weight: 500; line-height: 1.55; }
+.benefit-card p:last-child { margin-bottom: 0; }
 .carousel-arrow { position: absolute; top: 43%; z-index: 2; display: grid; width: 3rem; height: 3rem; place-items: center; border: 0; border-radius: 50%; background: #fff; box-shadow: 0 8px 20px rgba(28, 49, 95, .12); color: #1c315f; cursor: pointer; font-size: 2.5rem; line-height: 1; transition: background-color .2s ease, color .2s ease, transform .2s ease; }
 .carousel-arrow:hover, .carousel-arrow:focus-visible { background: #651762; color: #fff; outline: none; transform: scale(1.08); }
 .carousel-arrow--previous { left: -1.5rem; }.carousel-arrow--next { right: -1.5rem; }
-.carousel-dots { display: flex; justify-content: center; gap: .65rem; margin-top: 2rem; }
+.carousel-dots { display: flex; justify-content: center; gap: .65rem; margin-top: 1rem; }
 .carousel-dots button { width: .55rem; height: .55rem; padding: 0; border: 0; border-radius: 50%; background: #d1d6e1; cursor: pointer; transition: background-color .2s ease, transform .2s ease; }
 .carousel-dots button[aria-selected="true"] { background: #651762; transform: scale(1.35); }
 
