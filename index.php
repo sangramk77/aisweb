@@ -24,6 +24,8 @@ $pageTitle = 'AIS Web';
         <?php require __DIR__ . '/sections/accreditations.php'; ?>
         <?php require __DIR__ . '/sections/mediators.php'; ?>
         <?php require __DIR__ . '/sections/process.php'; ?>
+        <?php require __DIR__ . '/sections/why-us.php'; ?>
+        <?php require __DIR__ . '/sections/faq.php'; ?>
         <?php require __DIR__ . '/sections/about.php'; ?>
     </main>
 
