@@ -1136,17 +1136,55 @@ h2 { font-size: 2rem; }
     text-decoration: underline;
 }
 
-/* Bottom Bar */
+/* Bottom Bar with Horizontal Social Icons & Copyright */
 .footer-bottom {
-    padding-top: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, .1);
-    color: #94a3b8;
-    font-size: clamp(.82rem, .92vw, .88rem);
-    font-weight: 500;
     text-align: center;
 }
-.footer-bottom p {
+
+.footer-social-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(.5rem, 1.2vw, .75rem);
+}
+
+.social-icon-btn {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: .85rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .08) 0%, rgba(255, 255, 255, .02) 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2), inset 0 1px 0 rgba(255, 255, 255, .2);
+    color: #e2e8f0;
+    text-decoration: none;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: transform .3s ease, background-color .3s ease, border-color .3s ease, box-shadow .3s ease, color .3s ease;
+}
+
+.social-icon-btn:hover {
+    border-color: rgba(192, 132, 252, .45);
+    background: linear-gradient(135deg, rgba(101, 23, 98, .7) 0%, rgba(28, 49, 95, .8) 100%);
+    box-shadow: 0 8px 24px rgba(101, 23, 98, .35), 0 0 20px rgba(56, 189, 248, .2), inset 0 1px 0 rgba(255, 255, 255, .3);
+    color: #ffffff;
+    transform: translateY(-4px) scale(1.08);
+}
+
+.copyright-text {
     margin: 0;
+    color: #94a3b8;
+    font-size: clamp(.84rem, .95vw, .92rem);
+    font-weight: 500;
+    letter-spacing: .01em;
 }
 
 /* Responsive Breaks */
