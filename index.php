@@ -47,6 +47,16 @@ $pageTitle = 'AIS Web';
         </a>
     </aside>
 
+    <!-- Floating Live Chat Trigger Widget -->
+    <div class="floating-chat-widget">
+        <div class="chat-speech-bubble" role="tooltip">
+            <span>Talk to a mediator now!</span>
+        </div>
+        <button class="chat-trigger-btn" type="button" aria-label="Talk to a mediator now">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </button>
+    </div>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>
